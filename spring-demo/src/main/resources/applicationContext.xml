@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+	xmlns:p="http://www.springframework.org/schema/p">
+
+	<bean id="address" class="com.cognizant.spring_demo.Address">
+		<!-- collaborators and configuration for this bean go here -->
+		<constructor-arg index="0" value="H001" />
+		<constructor-arg index="1" value="Kolkata" />
+		<constructor-arg index="2" value="India" />
+	</bean>
+
+	<bean id="student" class="com.cognizant.spring_demo.Student">
+		<!-- collaborators and configuration for this bean go here -->
+		<constructor-arg type="java.lang.String" value="Sayani" />
+		<constructor-arg type="java.lang.String" value="lo" />
+		<constructor-arg type="com.cognizant.spring_demo.Address"
+			ref="address" />
+			
+	</bean>
+	<bean name="employee" class="com.cognizant.spring_demo.Employee">
+		<property name="name">
+			<value>"Sarish"</value>
+		</property>
+		<property name="id">
+			<value>"851461"</value>
+		</property>
+	</bean>
+	<bean id="organization" class="com.cognizant.spring_demo.Organization"
+	 p:orgName="Cognizant" p:empType="Intern"/>
+
+</beans>
